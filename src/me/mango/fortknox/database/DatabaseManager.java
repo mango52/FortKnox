@@ -44,7 +44,6 @@ public class DatabaseManager {
 
 	//TODO log changes
 
-
 	public static int parseQueryToInt(ResultSet query) {
 		try {
 			return query.getInt("quantity");
