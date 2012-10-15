@@ -22,7 +22,7 @@ public class FortKnox extends JavaPlugin {
 		DatabaseManager.close();
 		getLogger().info(getDescription().getName() + " " + getDescription().getVersion() + " by Mango disabled.");
 	}
-	
+
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		String commandName = cmd.getName().toLowerCase();

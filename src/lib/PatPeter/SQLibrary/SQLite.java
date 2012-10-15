@@ -45,6 +45,7 @@ public class SQLite extends Database {
 				+ ".db");
 	}
 
+	@Override
 	protected boolean initialize() {
 		try {
 			Class.forName("org.sqlite.JDBC");

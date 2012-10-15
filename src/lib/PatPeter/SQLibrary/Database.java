@@ -24,16 +24,16 @@ public abstract class Database {
 	// http://sqlite.org/lang.html
 	protected enum Statements {
 		SELECT, INSERT, UPDATE, DELETE, DO, REPLACE, LOAD, HANDLER, CALL, // Data
-																			// manipulation
-																			// statements
+		// manipulation
+		// statements
 		CREATE, ALTER, DROP, TRUNCATE, RENAME, // Data definition statements
 
 		RELEASE,
 
 		// MySQL-specific
 		START, COMMIT, SAVEPOINT, ROLLBACK, LOCK, UNLOCK, // MySQL Transactional
-															// and Locking
-															// Statements
+		// and Locking
+		// Statements
 		PREPARE, EXECUTE, DEALLOCATE, // Prepared Statements
 		SET, SHOW, // Database Administration
 		DESCRIBE, EXPLAIN, HELP, USE, // Utility Statements

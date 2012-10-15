@@ -9,6 +9,7 @@ import org.bukkit.Bukkit;
 public class SQLiteDB implements Database {
 	private SQLite db;
 
+	@Override
 	public void load() throws Exception {
 		db = new SQLite(Bukkit.getLogger(), "[FortKnox] ", "FortKnox", "plugins/FortKnox/");
 		db.open();
@@ -28,10 +29,12 @@ public class SQLiteDB implements Database {
 		}
 	}
 
+	@Override
 	public ResultSet query(String query) {
 		return db.query(query);
 	}
 
+	@Override
 	public void unload() {
 		db.close();
 	}

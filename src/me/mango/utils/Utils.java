@@ -13,7 +13,7 @@ public class Utils {
 		}
 		return -1;
 	}
-	
+
 	public static Integer freeSpaceForItem(ItemStack[] i, Material item) {
 		int freeSpace = 0;
 		for (ItemStack stack : i) {
