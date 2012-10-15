@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class FKCommandExecutor implements CommandExecutor {
-	
+
 	@SuppressWarnings("unused")
 	private FortKnox plugin;
 
@@ -15,19 +15,20 @@ public class FKCommandExecutor implements CommandExecutor {
 	}
 
 	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
+	public boolean onCommand(CommandSender sender, Command cmd,
+			String commandLabel, String[] args) {
 		String commandName = cmd.getName().toLowerCase();
 		if (!(sender instanceof Player)) {
 			sender.sendMessage("You cannot execute that command from the console!");
 		}
 		if (commandName.startsWith("deposit")) {
-			//TODO
+			// TODO
 			return true;
 		} else if (commandName.startsWith("withdraw")) {
-			//TODO
+			// TODO
 			return true;
 		} else if (commandName.startsWith("balance")) {
-			//TODO
+			// TODO
 			return true;
 		}
 		return false;

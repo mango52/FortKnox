@@ -22,21 +22,25 @@ import lib.PatPeter.SQLibrary.DatabaseConfig.Parameter;
  * @author Balor (aka Antoine Aflalo)
  */
 public class DatabaseFactory {
-	public static Database createDatabase(DatabaseConfig config) throws InvalidConfiguration {
-		if (!config.isValid())
+	public static Database createDatabase(DatabaseConfig config)
+			throws InvalidConfiguration {
+		if (!config.isValid()) {
 			throw new InvalidConfiguration(
 					"The configuration is invalid, you don't have enought parameter for that DB : "
 							+ config.getType());
+		}
 		switch (config.getType()) {
 		case MYSQL:
-			return new MySQL(config.getLog(), config.getParameter(Parameter.DB_PREFIX),
+			return new MySQL(config.getLog(),
+					config.getParameter(Parameter.DB_PREFIX),
 					config.getParameter(Parameter.HOSTNAME),
 					config.getParameter(Parameter.PORT_NUMBER),
 					config.getParameter(Parameter.DATABASE),
 					config.getParameter(Parameter.USER),
 					config.getParameter(Parameter.PASSWORD));
 		case SQLITE:
-			return new SQLite(config.getLog(), config.getParameter(Parameter.DB_PREFIX),
+			return new SQLite(config.getLog(),
+					config.getParameter(Parameter.DB_PREFIX),
 					config.getParameter(Parameter.DB_NAME),
 					config.getParameter(Parameter.DB_LOCATION));
 		default:

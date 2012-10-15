@@ -13,7 +13,7 @@ public class FortKnox extends JavaPlugin {
 		getCommand("balance").setExecutor(new FKCommandExecutor(this));
 		getLogger().info(getDescription().getName() + " " + getDescription().getVersion() + " by Mango enabled.");
 	}
-	
+
 	@Override
 	public void onDisable() {
 		DatabaseManager.close();

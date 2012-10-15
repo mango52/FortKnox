@@ -18,7 +18,7 @@ package lib.PatPeter.SQLibrary;
 
 /**
  * @author Balor (aka Antoine Aflalo)
- *
+ * 
  */
 public class InvalidConfiguration extends Exception {
 
@@ -65,10 +65,10 @@ public class InvalidConfiguration extends Exception {
 	 * @param enableSuppression
 	 * @param writableStackTrace
 	 */
-	public InvalidConfiguration(String message, Throwable cause, boolean enableSuppression,
-			boolean writableStackTrace) {
-		super(message,cause);
-		//super(message, cause, enableSuppression, writableStackTrace);
+	public InvalidConfiguration(String message, Throwable cause,
+			boolean enableSuppression, boolean writableStackTrace) {
+		super(message, cause);
+		// super(message, cause, enableSuppression, writableStackTrace);
 		// TODO Auto-generated constructor stub
 	}
 

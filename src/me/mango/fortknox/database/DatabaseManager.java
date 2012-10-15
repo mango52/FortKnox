@@ -6,16 +6,16 @@ import java.sql.SQLException;
 import org.bukkit.Bukkit;
 
 public class DatabaseManager {
-	
+
 	private static SQLiteDB database;
 
 	public static void initialize() {
-        database = new SQLiteDB();
-        try {
-            database.load();
-        } catch (Exception e) {
-        	Bukkit.getLogger().info("Error loading database!");
-        }
+		database = new SQLiteDB();
+		try {
+			database.load();
+		} catch (Exception e) {
+			Bukkit.getLogger().info("Error loading database!");
+		}
 	}
 
 	public static void close() {
@@ -23,7 +23,7 @@ public class DatabaseManager {
 	}
 
 	public static void openAccount(String player, int quantity) {
-		String query = "insert into data(player,quantity) values('" + player +"'," + quantity + ")";
+		String query = "insert into data(player,quantity) values('" + player + "'," + quantity + ")";
 		database.query(query);
 	}
 
@@ -31,7 +31,7 @@ public class DatabaseManager {
 		String query = "select quantity from data where player = '" + player + "'";
 		return parseQueryToInt(database.query(query));
 	}
-	
+
 	public static void updateQuantity(String player, int quantity) {
 		String query = "update data set quantity = " + quantity + " where player = '" + player + "'";
 		database.query(query);
@@ -42,11 +42,9 @@ public class DatabaseManager {
 		database.query(query);
 	}
 
-/*	public static void logUpdate(String player, int oldAmount, int newAmount) { //TODO
-		String query = "insert into transactions(seller,buyer,item,amount,cost,damage) values('" +transaction.seller +"','"+ transaction.buyer + "'," + transaction.item.getTypeId() + ","+ transaction.item.getAmount() +","+transaction.cost+","+transaction.item.getDurability()+")";
-		database.query(query);
-	}*/
-	
+	//TODO log changes
+
+
 	public static int parseQueryToInt(ResultSet query) {
 		try {
 			return query.getInt("quantity");
