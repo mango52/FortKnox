@@ -22,7 +22,7 @@ public class SQLiteDB implements Database {
 	}
 
 	private void checkTables() {
-		if (!this.db.checkTable("stock")) {
+		if (!this.db.checkTable("data")) {
 			String query = "create table data('player' varchar(16) not null,'quantity' integer not null)";
 			db.createTable(query);
 			Bukkit.getLogger().info("Created data table");
