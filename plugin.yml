@@ -1,0 +1,16 @@
+author: Mango
+name: FortKnox
+description: Allows gold ingots to be stored via commands
+main: me.mango.fortknox.FortKnox
+version: dev-b1
+database: true
+commands:
+    deposit:
+      description: Deposit gold ingots
+      usage: /<command> [amount]
+    withdraw:
+      description: Withdraw gold ingots
+      usage: /<command> [amount]
+    balance:
+      description: Check your gold ingot balance
+      usage: /<command>
