@@ -31,6 +31,7 @@ public class FortKnox extends JavaPlugin {
 		else if (commandName.startsWith("deposit")) Deposit.execute((Player) sender, args);
 		else if (commandName.startsWith("withdraw")) Withdraw.execute((Player) sender, args);
 		else if (commandName.startsWith("balance")) Balance.execute((Player) sender);
+		else if (commandName.startsWith("gold")) Balance.execute((Player) sender);
 		return true;
 	}
 }

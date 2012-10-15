@@ -14,3 +14,4 @@ commands:
     balance:
       description: Check your gold ingot balance
       usage: /<command>
+      aliases: gold
