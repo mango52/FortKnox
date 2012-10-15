@@ -45,10 +45,12 @@ public class DatabaseManager {
 	//TODO log changes
 
 	public static int parseQueryToInt(ResultSet query) {
+		int result = 0;
 		try {
-			return query.getInt("quantity");
+			result =  query.getInt("quantity");
+			query.close();
 		} catch (SQLException e) {
 		}
-		return 0;
+		return result;
 	}
 }
