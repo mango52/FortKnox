@@ -14,13 +14,13 @@ public class FortKnox extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		DatabaseManager.initialize();
-		getLogger().info(getDescription().getName() + " " + getDescription().getVersion() + " by Mango enabled.");
+		getLogger().info(getDescription().getVersion() + " by Mango enabled.");
 	}
 
 	@Override
 	public void onDisable() {
 		DatabaseManager.close();
-		getLogger().info(getDescription().getName() + " " + getDescription().getVersion() + " by Mango disabled.");
+		getLogger().info(getDescription().getVersion() + " by Mango disabled.");
 	}
 
 	@Override
