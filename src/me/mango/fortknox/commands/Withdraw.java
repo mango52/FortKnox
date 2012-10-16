@@ -27,10 +27,14 @@ public class Withdraw {
 			sender.sendMessage(ChatColor.RED + "You don't have enough inventory space to withdraw that many!");
 			return;
 		}
-		int newBalance = DatabaseManager.getBalance(sender.getName()) - number;
-		DatabaseManager.updateQuantity(sender.getName(), newBalance);
-		sender.getInventory().addItem(new ItemStack(Material.GOLD_INGOT, number));
-		sender.sendMessage(ChatColor.GREEN + "Successfully withdrew " + number + " ingots.");
-		sender.sendMessage(ChatColor.GREEN + "Your balance is now " + DatabaseManager.getBalance(sender.getName()) + " ingots.");
+		if (DatabaseManager.getBalance(sender.getName()) == number) {
+			DatabaseManager.deleteAccount(sender.getName());
+		} else {
+			int newBalance = DatabaseManager.getBalance(sender.getName()) - number;
+			DatabaseManager.updateQuantity(sender.getName(), newBalance);
+			sender.getInventory().addItem(new ItemStack(Material.GOLD_INGOT, number));
+			sender.sendMessage(ChatColor.GREEN + "Successfully withdrew " + number + " ingots.");
+			sender.sendMessage(ChatColor.GREEN + "Your balance is now " + DatabaseManager.getBalance(sender.getName()) + " ingots.");
+		}
 	}
 }
