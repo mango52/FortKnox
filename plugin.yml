@@ -8,6 +8,7 @@ commands:
     deposit:
       description: Deposit gold ingots
       usage: /<command> [amount]
+      aliases: store
     withdraw:
       description: Withdraw gold ingots
       usage: /<command> [amount]

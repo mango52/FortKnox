@@ -29,6 +29,7 @@ public class FortKnox extends JavaPlugin {
 		if (!(sender instanceof Player))
 			sender.sendMessage("You cannot execute that command from the console!");
 		else if (commandName.startsWith("deposit")) Deposit.execute((Player) sender, args);
+		else if (commandName.startsWith("store")) Deposit.execute((Player) sender, args);
 		else if (commandName.startsWith("withdraw")) Withdraw.execute((Player) sender, args);
 		else if (commandName.startsWith("balance")) Balance.execute((Player) sender);
 		else if (commandName.startsWith("gold")) Balance.execute((Player) sender);
