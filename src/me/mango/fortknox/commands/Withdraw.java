@@ -19,11 +19,11 @@ public class Withdraw {
 			sender.sendMessage(ChatColor.RED + "That is not a valid number.");
 			return;
 		}
-		if ((DatabaseManager.getBalance(sender.getName()) <= number)) {
+		if ((DatabaseManager.getBalance(sender.getName()) < number)) {
 			sender.sendMessage(ChatColor.RED + "You don't have enough ingots stored to withdraw that many!");
 			return;
 		}
-		if ((Utils.freeSpaceForItem(sender.getInventory().getContents(), Material.GOLD_INGOT) <= number)) {
+		if ((Utils.freeSpaceForItem(sender.getInventory().getContents(), Material.GOLD_INGOT) < number)) {
 			sender.sendMessage(ChatColor.RED + "You don't have enough inventory space to withdraw that many!");
 			return;
 		}
