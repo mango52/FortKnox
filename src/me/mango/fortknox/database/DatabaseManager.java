@@ -49,6 +49,7 @@ public class DatabaseManager {
 		try {
 			while(query.next()) {
 				result = query.getInt("quantity");
+				query.close();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
