@@ -4,6 +4,7 @@ import me.mango.fortknox.database.DatabaseManager;
 import me.mango.utils.Utils;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -18,12 +19,12 @@ public class Deposit {
 			sender.sendMessage(ChatColor.RED + "That is not a valid number.");
 			return;
 		}
-		if(!sender.getInventory().contains(266, number)) {
+		if(!sender.getInventory().contains(Material.GOLD_INGOT, number)) {
 			sender.sendMessage(ChatColor.RED + "You don't have that many gold ingots!");
 			return;
 		}
 		String player = sender.getName();
-		sender.getInventory().remove(new ItemStack(266, number));
+		sender.getInventory().removeItem(new ItemStack(Material.GOLD_INGOT, number));
 		if(DatabaseManager.getBalance(player) == 0) {
 			DatabaseManager.openAccount(player, number);
 		} else {
