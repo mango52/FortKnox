@@ -1,6 +1,5 @@
 package me.mango.fortknox.database;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.bukkit.Bukkit;
@@ -29,7 +28,13 @@ public class DatabaseManager {
 
 	public static int getBalance(String player) {
 		String query = "select quantity from data where player = '" + player + "'";
-		return parseQueryToInt(database.query(query));
+		int result = 0;
+		try {
+			result = database.query(query).getInt("quantity");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public static void updateQuantity(String player, int quantity) {
@@ -43,14 +48,4 @@ public class DatabaseManager {
 	}
 
 	//TODO log changes
-
-	public static int parseQueryToInt(ResultSet query) {
-		int result = 0;
-		try {
-			result =  query.getInt("quantity");
-			query.close();
-		} catch (SQLException e) {
-		}
-		return result;
-	}
 }
