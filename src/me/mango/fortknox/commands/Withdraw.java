@@ -32,9 +32,9 @@ public class Withdraw {
 		} else {
 			int newBalance = DatabaseManager.getBalance(sender.getName()) - number;
 			DatabaseManager.updateQuantity(sender.getName(), newBalance);
-			sender.getInventory().addItem(new ItemStack(Material.GOLD_INGOT, number));
-			sender.sendMessage(ChatColor.GREEN + "Successfully withdrew " + number + " ingots.");
-			sender.sendMessage(ChatColor.GREEN + "Your balance is now " + DatabaseManager.getBalance(sender.getName()) + " ingots.");
 		}
+		sender.getInventory().addItem(new ItemStack(Material.GOLD_INGOT, number));
+		sender.sendMessage(ChatColor.GREEN + "Successfully withdrew " + number + " ingots.");
+		sender.sendMessage(ChatColor.GREEN + "Your balance is now " + DatabaseManager.getBalance(sender.getName()) + " ingots.");
 	}
 }
