@@ -28,13 +28,15 @@ public class FortKnox extends JavaPlugin {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		String commandName = cmd.getName().toLowerCase();
-		if (!(sender instanceof Player))
+		if (commandName.startsWith("balance")) Balance.execute((Player) sender, args);
+		else if (commandName.startsWith("gold")) Balance.execute((Player) sender, args);
+		else if (!(sender instanceof Player)) {
 			sender.sendMessage("You cannot execute that command from the console!");
+		}
 		else if (commandName.startsWith("deposit")) Deposit.execute((Player) sender, args);
 		else if (commandName.startsWith("store")) Deposit.execute((Player) sender, args);
 		else if (commandName.startsWith("withdraw")) Withdraw.execute((Player) sender, args);
-		else if (commandName.startsWith("balance")) Balance.execute((Player) sender, args);
-		else if (commandName.startsWith("gold")) Balance.execute((Player) sender, args);
+
 		return true;
 	}
 }
