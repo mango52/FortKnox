@@ -1,7 +1,9 @@
-package me.mango.fortknox.database;
+package me.mango.managers;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import me.mango.fortknox.managers.database.SQLiteDB;
 
 import org.bukkit.Bukkit;
 

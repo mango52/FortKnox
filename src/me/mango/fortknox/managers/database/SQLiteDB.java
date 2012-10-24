@@ -1,4 +1,4 @@
-package me.mango.fortknox.database;
+package me.mango.fortknox.managers.database;
 
 import java.sql.ResultSet;
 

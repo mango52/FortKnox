@@ -4,7 +4,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 public class Utils {
-	public static Integer parseInteger(String s) {
+	public static int parseInteger(String s) {
 		try {
 			Integer i = Integer.parseInt(s);
 			if(i > 0) return i;
@@ -14,7 +14,7 @@ public class Utils {
 		return -1;
 	}
 
-	public static Integer freeSpaceForItem(ItemStack[] i, Material item) {
+	public static int freeSpaceForItem(ItemStack[] i, Material item) {
 		int freeSpace = 0;
 		for (ItemStack stack : i) {
 			if(stack == null) {
