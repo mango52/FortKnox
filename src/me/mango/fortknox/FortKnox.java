@@ -3,6 +3,7 @@ package me.mango.fortknox;
 import me.mango.fortknox.commands.Balance;
 import me.mango.fortknox.commands.Deposit;
 import me.mango.fortknox.commands.Withdraw;
+import me.mango.managers.ConfigManager;
 import me.mango.managers.DatabaseManager;
 import me.mango.managers.VaultManager;
 
@@ -15,6 +16,7 @@ public class FortKnox extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		DatabaseManager.initialize();
+		ConfigManager.initialize(this);
 		VaultManager.initialize(this);
 		getLogger().info(getDescription().getVersion() + " by Mango enabled.");
 	}
