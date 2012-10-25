@@ -13,11 +13,15 @@ public class VaultManager {
 	public static boolean permissionsLoaded = false;
 
 	public static void initialize(FortKnox plugin) {
-		if(setupPermissions(plugin)) {
-			permissionsLoaded = true;
-			Bukkit.getLogger().info("Successfully registered permissions through " + permissions.getName());
+		if (ConfigManager.usePermissions()) {
+			if (setupPermissions(plugin)) {
+				permissionsLoaded = true;
+				Bukkit.getLogger().info("Successfully registered permissions through " + permissions.getName());
+			} else {
+				Bukkit.getLogger().info("No permissions plugin found - everyone can use all commands");
+			}
 		} else {
-			Bukkit.getLogger().info("No permissions plugin found - everyone can use all commands");
+			Bukkit.getLogger().info("Permissions disabled in configuration - everyone can use all commands");
 		}
 	}
 
@@ -26,7 +30,7 @@ public class VaultManager {
 		permissions = rsp.getProvider();
 		return permissions != null;
 	}
-	
+
 	public static boolean hasPermission(Player player, String permission) {
 		if (permissionsLoaded && permissions.has(player, permission)) {
 			return true;
