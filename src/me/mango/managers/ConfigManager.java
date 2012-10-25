@@ -14,7 +14,7 @@ public class ConfigManager {
 		config = plugin.getConfig();
 	}
 
-	public static void repairConfig(FortKnox plugin) {
+	private static void repairConfig(FortKnox plugin) {
 		FileConfiguration config = plugin.getConfig();
 		if (!config.contains("usePermissions")) {
 			config.set("usePermissions", true);
