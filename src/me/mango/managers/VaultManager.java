@@ -17,7 +17,7 @@ public class VaultManager {
 			permissionsLoaded = true;
 			Bukkit.getLogger().info("Successfully registered permissions through " + permissions.getName());
 		} else {
-			Bukkit.getLogger().info("No permissions plugin found - defaulting to OPs");
+			Bukkit.getLogger().info("No permissions plugin found - everyone can use all commands");
 		}
 	}
 
@@ -30,11 +30,11 @@ public class VaultManager {
 	public static boolean hasPermission(Player player, String permission) {
 		if (permissionsLoaded && permissions.has(player, permission)) {
 			return true;
-		}
-		else if (player.isOp() && ConfigManager.OPOverride()) {
+		} else if (player.isOp() && ConfigManager.OPOverride()) {
 			return true;
-		}
-		else {
+		} else if (!permissionsLoaded) {
+			return true;
+		} else {
 			return false;
 		}
 	}
